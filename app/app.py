@@ -1,11 +1,10 @@
 import os
-
 from flask import Flask, request, jsonify, render_template
 import tensorflow as tf
 import numpy as np
 import cv2
-app = Flask(__name__)
 
+app = Flask(__name__)
 model = tf.keras.models.load_model("plant_disease")
 
 
@@ -34,19 +33,10 @@ def upload():
     return '''
     <h1>Upload new File</h1>
     <form method="post" enctype="multipart/form-data">
-      <input type="file" name="file1">
+      <input type="file" name="filename">
       <input type="submit">
     </form>
     '''
-
-
-    # try:
-    #     if request.method == 'POST':
-    #         f = request.files['filename']
-    #         return model_predict(f)
-    #     #imagefile = Flask.request.files.get('filename', '')
-        #return model_predict(imagefile)
-
 
 
 CATEGORIES =['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy',
@@ -71,14 +61,9 @@ def prepare(filepath):
 
 
 def model_predict(filename):
-    print(f"{os.getcwd()}/upload/{filename}")
     prediction = model.predict([prepare(f"{os.getcwd()}/upload/{filename}")])
     return str(CATEGORIES[(np.argmax(prediction))])
 
-
-
-# print(os.getcwd())
-# print(model_predict("./upload/apple.JPG"))
 
 if __name__ == "__main__":
     app.run(debug=True)
