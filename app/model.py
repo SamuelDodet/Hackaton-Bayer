@@ -1,7 +1,6 @@
 import tensorflow as tf
 from tensorflow import keras
 import matplotlib.pyplot as plt
-import numpy as np
 import os
 import json
 from IPython.display import FileLink
@@ -11,11 +10,11 @@ target_size = (image_size, image_size)
 input_shape = (image_size, image_size, 3)
 
 batch_size = 32
-epochs = 5
+epochs = 15
 
 base_dir = (
-    "./new plant diseases dataset(augmented)/New Plant Diseases Dataset(Augmented)"
-)
+    "../New Plant Diseases Dataset(Augmented)/New Plant Diseases Dataset(Augmented)"
+            )
 train_dir = os.path.join(base_dir, "train")
 test_dir = os.path.join(base_dir, "valid")
 
@@ -67,7 +66,7 @@ x = tf.keras.layers.Dense(len(categories), activation="softmax")(x)
 
 model = keras.Model(inputs=inputs, outputs=x, name="LeafDisease_MobileNet")
 
-optimizer = tf.keras.optimizers.SGD(lr=0.01, nesterov=True)
+optimizer = tf.keras.optimizers.Adam()
 
 model.compile(
     optimizer=optimizer,
@@ -109,4 +108,4 @@ plt.ylabel("Accuracy")
 plt.legend()
 plt.show()
 
-model.save("plant_diseaseSGD")
+model.save("plant_disease")

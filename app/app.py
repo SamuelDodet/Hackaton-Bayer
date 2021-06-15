@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, request, jsonify, render_template
 import tensorflow as tf
 import numpy as np
@@ -9,16 +11,39 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+
+UPLOAD_FOLDER = './upload'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
 @app.route('/predict', methods=['POST'])
 def upload():
-    try:
-        imagefile = flask.request.files.get('imagefile', '')
-        model = tf.keras.models.load_model("plant_disease")
-        prediction = model.predict([prepare(imagefile)])
-        return CATEGORIES[(np.argmax(prediction))]
+    if request.method == 'POST':
+        if 'myFile' not in request.files:
+            return 'there is no filename in form!'
+        file1 = request.files['myFile']
+        path = os.path.join(app.config['UPLOAD_FOLDER'], file1.filename)
+        file1.save(path)
+        return path
 
-    except:
-        print('fuck this shit')
+        return model_predict(file1)
+    return '''
+    <h1>Upload new File</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="file1">
+      <input type="submit">
+    </form>
+    '''
+
+
+    # try:
+    #     if request.method == 'POST':
+    #         f = request.files['filename']
+    #         return model_predict(f)
+    #     #imagefile = Flask.request.files.get('filename', '')
+        #return model_predict(imagefile)
+
+
 
 CATEGORIES =['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy',
              'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy',
@@ -40,12 +65,14 @@ def prepare(filepath):
     new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE),3)
     return new_array.reshape(-1, IMG_SIZE, IMG_SIZE, 3)
 
+
 def model_predict(imagefile):
     model = tf.keras.models.load_model("plant_disease")
     prediction = model.predict([prepare(imagefile)])
-    print(CATEGORIES[(np.argmax(prediction))])
+    return str(CATEGORIES[(np.argmax(prediction))])
 
-model_predict()
+
+# model_predict("./apple.JPG")
 
 if __name__ == "__main__":
     app.run(debug=True)
