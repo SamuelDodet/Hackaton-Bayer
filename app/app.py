@@ -6,6 +6,8 @@ import numpy as np
 import cv2
 app = Flask(__name__)
 
+model = tf.keras.models.load_model("plant_disease")
+
 
 @app.route("/")
 def home():
@@ -19,14 +21,16 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/predict', methods=['POST'])
 def upload():
     if request.method == 'POST':
-        if 'myFile' not in request.files:
+        print(request.files)
+        print(request.form)
+        if 'filename' not in request.files:
             return 'there is no filename in form!'
-        file1 = request.files['myFile']
+        file1 = request.files['filename']
+        print(file1.filename)
         path = os.path.join(app.config['UPLOAD_FOLDER'], file1.filename)
         file1.save(path)
-        return path
+        return model_predict(file1.filename)
 
-        return model_predict(file1)
     return '''
     <h1>Upload new File</h1>
     <form method="post" enctype="multipart/form-data">
@@ -66,13 +70,15 @@ def prepare(filepath):
     return new_array.reshape(-1, IMG_SIZE, IMG_SIZE, 3)
 
 
-def model_predict(imagefile):
-    model = tf.keras.models.load_model("plant_disease")
-    prediction = model.predict([prepare(imagefile)])
+def model_predict(filename):
+    print(f"{os.getcwd()}/upload/{filename}")
+    prediction = model.predict([prepare(f"{os.getcwd()}/upload/{filename}")])
     return str(CATEGORIES[(np.argmax(prediction))])
 
 
-# model_predict("./apple.JPG")
+
+# print(os.getcwd())
+# print(model_predict("./upload/apple.JPG"))
 
 if __name__ == "__main__":
     app.run(debug=True)
