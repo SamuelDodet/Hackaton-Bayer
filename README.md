@@ -2,10 +2,11 @@
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/samuel-dodet/)
 
 
-
+![First Epoch](https://github.com/SamuelDodet/Hackaton-Bayer/blob/development/app/images/logo.png)
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
+
 
   <h3 align="center">Hackaton Bayer</h3>
 
@@ -51,7 +52,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Hunger For None][product-screenshot]](https://example.com)
+[![Hunger For None][product-screenshot]](https://github.com/SamuelDodet/Hackaton-Bayer/blob/development/app/images/logo2.png)
 
 This hackathon took place during last weekend of May 2021, with more than 400 participation. 
 The purpose of this project is to use object detection 
@@ -123,10 +124,10 @@ Modelling steps:
       * create a small upstream model on top of the MobileNet using the functional API
       * Add Adam Optimizer
       * Training the model
-      ![First Epoch](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-        ![Last Epoch](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+      ![First Epoch](https://github.com/SamuelDodet/Hackaton-Bayer/blob/development/app/images/epoch1.png)
+        ![Last Epoch](https://github.com/SamuelDodet/Hackaton-Bayer/blob/development/app/images/epoch25.png)
       * Review the process (plot)
-        ![review](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+        ![review](https://github.com/SamuelDodet/Hackaton-Bayer/blob/development/app/images/review.png)
       * Save the model    
    * Train Model on our dataset
    * Plotting Loss/Accuracy graph (informative purpose)
