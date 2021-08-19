@@ -10,7 +10,7 @@ target_size = (image_size, image_size)
 input_shape = (image_size, image_size, 3)
 
 batch_size = 32
-epochs = 15
+epochs = 25
 
 base_dir = (
     "../New Plant Diseases Dataset(Augmented)/New Plant Diseases Dataset(Augmented)"
