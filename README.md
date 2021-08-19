@@ -138,7 +138,7 @@ Flask api :
    * Loading Model
    * Add images from the list of test fruit and see result
 
-![review](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![review](https://github.com/SamuelDodet/Hackaton-Bayer/blob/development/app/images/SPOILER_Capture_decran_de_2021-05-29_16-50-28.png)
 
 
 
