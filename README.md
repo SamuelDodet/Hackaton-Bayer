@@ -6,7 +6,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-
+    
 
   <h3 align="center">Hackaton Bayer</h3>
 
@@ -170,6 +170,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Samuel Dodet - [@Linkedin](https://www.linkedin.com/in/samuel-dodet/) - samuel.dodet3@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/your_username/repo_name](https://github.com/SamuelDodet/Hackaton-Bayer/tree/main)
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
