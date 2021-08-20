@@ -52,7 +52,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Hunger For None](https://github.com/SamuelDodet/Hackaton-Bayer/blob/main/app/images/logo2.png)
+![Hunger For None](https://github.com/SamuelDodet/Hackaton-Bayer/blob/main/app/images/logo2.png)
 
 This hackathon took place during last weekend of May 2021, with more than 400 people participating. 
 The purpose of this project is to use object detection 
