@@ -2,7 +2,7 @@
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/samuel-dodet/)
 
 
-![First Epoch](https://github.com/SamuelDodet/Hackaton-Bayer/blob/development/app/images/logo.png)
+![Logo]()
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -54,13 +54,13 @@
 
 [![Hunger For None][product-screenshot]](https://github.com/SamuelDodet/Hackaton-Bayer/blob/development/app/images/logo2.png)
 
-This hackathon took place during last weekend of May 2021, with more than 400 participation. 
+This hackathon took place during last weekend of May 2021, with more than 400 people participating. 
 The purpose of this project is to use object detection 
-and image processing in order to give the type of disease that the plant have. The farmer will with this information
+and image processing in order to give the type of disease that the plant have. The farmer will with this information,
 have the possibility to threat it accurately.
 
 I would like to precise that this project has been done during the second month of my bootcamp
-in BeCode and any of these technologies have been seen before.
+in BeCode and any of these technologies has been seen before.
 
 We use the PlantVillage dataset [1] by Hughes et al. consists of about 87,000 healthy and unhealthy leaf images divided 
 into 38 categories by species and disease. Here we provide a subset of our experiments on working with this data. 
@@ -89,9 +89,9 @@ To achieve this challenge, here are the main framework use in it:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone git@github.com:SamuelDodet/Hackaton-Bayer.git
    ```
-2. Install NPM packages
+2. Install requirement
    ```sh
    pip install requirement.txt
    ```
