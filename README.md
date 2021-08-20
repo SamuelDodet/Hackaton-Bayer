@@ -2,7 +2,7 @@
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/samuel-dodet/)
 
 
-![Logo]()
+![Logo](https://github.com/SamuelDodet/Hackaton-Bayer/blob/development/app/images/logo.png)
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
